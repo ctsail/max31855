@@ -10,11 +10,11 @@ thermocouples = []
 for cs_pin in cs_pins:
     thermocouples.append(MAX31855(cs_pin, clock_pin, data_pin, units))
 running = True
-with open("/home/pi/projects/max31855_logger/tmp.csv","a") as log:
+with open("/home/pi/Projects/max31855_logger/tmp.csv","a") as log:
     while(running):
         try:
             for thermocouple in thermocouples:
-                #rj = thermocouple.get_rj()
+                rj = thermocouple.get_rj()
                 try:
                     tc = thermocouple.get()
                 except MAX31855Error as e:
