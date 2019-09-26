@@ -20,7 +20,7 @@ while(running):
                 tc = "Error: "+ e.value
                 running = False
             print("tc: {} and rj: {}".format(tc, rj))
-        time.sleep(1)
+        time.sleep(0.1)
     except KeyboardInterrupt:
         running = False
 for thermocouple in thermocouples:
