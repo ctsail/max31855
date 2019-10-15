@@ -35,6 +35,9 @@ class MAX31855(object):
         # Pull chip select high to make chip inactive
         GPIO.output(self.cs_pin, GPIO.HIGH)
 
+        # Initialize clock low
+        GPIO.output(self.clock_pin, GPIO.LOW)
+
     def get(self):
         '''Reads SPI bus and returns current value of thermocouple.'''
         self.read()
